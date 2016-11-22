@@ -1,0 +1,21 @@
+body,div,p,img,input,ul,li{margin:0;padding:0;}
+ul,li{list-style:none;}
+html,body{width:100%; height:100%; overflow:hidden;}
+/*body{background:#0b0201; }*/
+.win-screen{width:100%; height:100%;}
+.poa{position:absolute;}
+.wp{display:none;}
+.img{font-size:0;}
+.title { width:100%; height:219px; background:url(../images/title.jpg) center top no-repeat; background-size:320px auto; margin-top:100px; }
+dt { font-size:20px; font-weight:normal; text-align:center; }
+li { padding-left:20px; }
+ul li:nth-child(1) { animation:ani1 4s linear infinite; background:url(../images/slice/list-1.png) left center no-repeat; }
+ul li:nth-child(2) { animation:ani1 4s .3s linear infinite; background:url(../images/slice/list-2.png) left center no-repeat; }
+ul li:nth-child(3) { animation:ani1 4s .6s linear infinite; background:url(../images/slice/list-1.png) left center no-repeat;}
+ul li:nth-child(4) { animation:ani1 4s .9s linear infinite; background:url(../images/slice/list-2.png) left center no-repeat;}
+ul li:nth-child(5) { animation:ani1 4s 1.2s linear infinite; background:url(../images/slice/list-1.png) left center no-repeat;}
+@keyframes ani1 {
+	0% {transform:translateX(0px);}
+	50% {transform:translateX(50px);}
+	100% {transform:translateX(0px);}
+}

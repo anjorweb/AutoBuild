@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>构建工具</title>
+    <!-- build:css css/main.css -->
+    <link href="css/one.css" rel="stylesheet">
+    <link href="css/two.css" rel="stylesheet">
+    <!-- endbuild -->
+</head>
+<body>
+
+<dl>
+    <dt><div class="title"></div></dt>
+    <dd>
+        <ul>
+            <li>自动刷新</li>
+            <li>jshint JS语法检查</li>
+			<li>小图片自动转换成base64</li>
+			<li>支持Less自动转CSS</li>
+            <li>一键发布</li>
+        </ul>
+    </dd>
+</dl>
+
+	<!-- build:js js/libs.js -->
+    <script type="text/javascript" src="js/libs/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/libs/TweenMax.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js js/app.js -->
+    <script type="text/javascript" src="js/app/one.js"></script>
+    <script type="text/javascript" src="js/app/two.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
