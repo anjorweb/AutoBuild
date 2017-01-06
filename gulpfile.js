@@ -12,7 +12,9 @@ var gulp = require('gulp'),
     base64 = require('gulp-base64'),
     browsersync = require('browser-sync'),
     reload = browsersync.reload,
-	autoprefixer = require('gulp-autoprefixer');
+	autoprefixer = require('gulp-autoprefixer'),
+    postcss = require('gulp-postcss'),
+    px2rem = require('postcss-px2rem');
 var SRCPATH = 'src/';   //源文件目录
 var PUBLISH = 'publish/';		//发布目录
 //语法检查
@@ -69,7 +71,13 @@ gulp.task('less', function(){
 	.pipe(reload({stream: true}));
 
 });
-gulp.task('testAutoFx', ['less'], function () {
+gulp.task('cssrem', function() {
+  var processors = [px2rem({remUnit: 75})];
+  return gulp.src(SRCPATH+'css/*.css')
+    .pipe(postcss(processors))
+    .pipe(gulp.dest(SRCPATH+'css'));
+});
+gulp.task('testAutoFx', ['less', 'cssrem'], function () {
     gulp.src(SRCPATH+'css/*.css')
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'Android >= 4.0'],
@@ -129,7 +137,7 @@ gulp.task('base64', function() {
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('browser-sync', ['less'], function() {
+gulp.task('browser-sync', ['less', 'cssrem'], function() {
     browsersync.init({
         server: SRCPATH
     });
